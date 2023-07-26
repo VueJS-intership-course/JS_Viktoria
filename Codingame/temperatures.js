@@ -1,28 +1,18 @@
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
-
-const n = parseInt(readline()); // the number of temperatures to analyse
-if (n == 0) {
+const n = parseInt(readline());
+if (n === 0) {
   console.log(0);
 } else {
-  const arrayy = [];
-  let closestToZero;
+  const tempsArr = [];
 
   var inputs = readline().split(" ");
+  let closestToZero = inputs[0];
+
   for (let i = 0; i < n; i++) {
     const t = parseInt(inputs[i]);
-    arrayy.push(t);
-    if (i === 0) {
-      closestToZero = inputs[i];
-    }
-    if (t > 0 && t < closestToZero) {
-      closestToZero = t;
-    }
-    if (t < 0 && t > closestToZero && !arrayy.includes(-t)) {
-      closestToZero = t;
-    }
+    tempsArr.push(t);
+
+    closestToZero = t > 0 && t < closestToZero ? t : closestToZero;
+    closestToZero = t < 0 && t > closestToZero && !tempsArr.includes(-t) ? t : closestToZero;
   }
   console.log(closestToZero);
 }
