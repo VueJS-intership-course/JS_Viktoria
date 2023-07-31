@@ -40,5 +40,7 @@ class Dolphin extends Animal {
 const zebra1 = new Zebra('Zebra1', 3, 'Africa');
 const dolphin1 = new Dolphin('Dolphin1', 6, 'Pacific Ocean');
 
+
+zebra1.set_value('Zeebra', 6, "Africa")
 console.log(zebra1.getInfo());
 console.log(dolphin1.getInfo());

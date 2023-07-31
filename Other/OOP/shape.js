@@ -7,7 +7,7 @@ class Shape {
 
 class Triangle extends Shape {
   area() {
-    return ;
+    return (this.width * this.height) / 2;
   }
 }
 
